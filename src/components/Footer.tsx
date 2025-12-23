@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { COMPANY_LOGO_WIDE, COMPANY_LOGO_ICON, SOCIAL_LINKS } from '@/lib/constants';
+import Image from 'next/image';
 
 const Footer: React.FC = () => {
   return (
@@ -9,11 +10,11 @@ const Footer: React.FC = () => {
         {/* Brand Identity */}
         <div className="space-y-8">
           <div className="flex items-center">
-            <img src={COMPANY_LOGO_ICON} alt="Travkings" className="h-12 lg:hidden" />
-            <img src={COMPANY_LOGO_WIDE} alt="Travkings" className="h-14 hidden lg:block" />
+            <Image src={COMPANY_LOGO_ICON} alt="Travkings" fill className="h-12 lg:hidden object-fill"/>
+            <Image src={COMPANY_LOGO_WIDE} alt="Travkings" fill className="h-14 hidden lg:block object-fill"/>
           </div>
           <p className="text-sm leading-brand font-normal italic">
-            "A legacy of over 10 years, crafting bespoke journeys that mirror the prestige and reliability of the Kings Group."
+            &quot;A legacy of over 10 years, crafting bespoke journeys that mirror the prestige and reliability of the Kings Group.&quot;
           </p>
           <div className="flex space-x-4">
             {SOCIAL_LINKS.map(social => (

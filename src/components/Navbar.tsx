@@ -2,13 +2,14 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
+// import { usePathname } from 'next/navigation';
+import Image from 'next/image';
 import { COMPANY_LOGO_WIDE, COMPANY_LOGO_ICON, SOCIAL_LINKS } from '@/lib/constants';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
+  // const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,9 +19,9 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
+  // useEffect(() => {
+  //   setIsOpen(false);
+  // }, [pathname]);
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'bg-brownCoffee shadow-2xl py-3' : 'bg-transparent py-6'}`}>
@@ -46,15 +47,17 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center group">
           {/* Responsive Logos - Removed inversion filter to preserve gold color */}
-          <img 
+          <Image 
             src={COMPANY_LOGO_ICON} 
             alt="Travkings Icon" 
+            fill
             className={`lg:hidden transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} 
           />
-          <img 
+          <Image 
             src={COMPANY_LOGO_WIDE} 
             alt="Travkings Logo" 
-            className={`hidden lg:block transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'}`} 
+            fill
+            className={`hidden lg:block transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'} object-fill`} 
           />
         </Link>
 
@@ -86,7 +89,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-brownCoffee z-40 transform transition-transform duration-500 lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full items-center justify-center space-y-10 text-white">
-          <img src={COMPANY_LOGO_ICON} alt="Travkings" className="h-16 mb-4" />
+          <Image src={COMPANY_LOGO_ICON} alt="Travkings" fill className="h-16 mb-4 object-fill"/>
           {['Home', 'About', 'Services', 'Contact'].map((item) => (
             <Link 
               key={item} 
