@@ -10,8 +10,20 @@ const Footer: React.FC = () => {
         {/* Brand Identity */}
         <div className="space-y-8">
           <div className="flex items-center">
-            <Image src={COMPANY_LOGO_ICON} alt="Travkings" fill className="h-12 lg:hidden object-fill"/>
-            <Image src={COMPANY_LOGO_WIDE} alt="Travkings" fill className="h-14 hidden lg:block object-fill"/>
+            <Image 
+              src={COMPANY_LOGO_ICON} 
+              alt="Travkings" 
+              width={48}
+              height={48}
+              className="w-auto h-12 lg:hidden"
+            />
+            <Image 
+              src={COMPANY_LOGO_WIDE} 
+              alt="Travkings" 
+              width={200}
+              height={56}
+              className="w-auto h-14 hidden lg:block"
+            />
           </div>
           <p className="text-sm leading-brand font-normal italic">
             &quot;A legacy of over 10 years, crafting bespoke journeys that mirror the prestige and reliability of the Kings Group.&quot;

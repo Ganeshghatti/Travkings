@@ -15,6 +15,9 @@ const Navbar: React.FC = () => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
+
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -50,14 +53,18 @@ const Navbar: React.FC = () => {
           <Image 
             src={COMPANY_LOGO_ICON} 
             alt="Travkings Icon" 
-            fill
-            className={`lg:hidden transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} 
+            width={48}
+            height={48}
+            priority
+            className={`lg:hidden w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} 
           />
           <Image 
             src={COMPANY_LOGO_WIDE} 
             alt="Travkings Logo" 
-            fill
-            className={`hidden lg:block transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'} object-fill`} 
+            width={200}
+            height={64}
+            priority
+            className={`hidden lg:block w-auto transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'}`} 
           />
         </Link>
 
@@ -89,7 +96,13 @@ const Navbar: React.FC = () => {
       {/* Mobile Menu Overlay */}
       <div className={`fixed inset-0 bg-brownCoffee z-40 transform transition-transform duration-500 lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
         <div className="flex flex-col h-full items-center justify-center space-y-10 text-white">
-          <Image src={COMPANY_LOGO_ICON} alt="Travkings" fill className="h-16 mb-4 object-fill"/>
+          <Image 
+            src={COMPANY_LOGO_ICON} 
+            alt="Travkings" 
+            width={64}
+            height={64}
+            className="w-auto h-16 mb-4"
+          />
           {['Home', 'About', 'Services', 'Contact'].map((item) => (
             <Link 
               key={item} 
