@@ -1,4 +1,3 @@
-import React from 'react';
 import { VALUES } from '@/lib/constants';
 
 export default function About() {
@@ -87,7 +86,7 @@ export default function About() {
             <div className="bg-brownCoffee/5 p-20 text-center space-y-10">
                <div className="flex justify-center"><i className="fa-solid fa-quote-left text-4xl text-uocGold opacity-40"></i></div>
                <p className="text-2xl font-medium tracking-headline text-brownCoffee leading-brand uppercase max-w-3xl mx-auto">
-                 "Every journey begins with understanding your aspirations. We ensure your experience is smooth, memorable, and truly enriching."
+                 &quot;Every journey begins with understanding your aspirations. We ensure your experience is smooth, memorable, and truly enriching.&quot;
                </p>
                <div className="flex flex-col items-center">
                   <div className="w-12 h-[1px] bg-brandy mb-4"></div>

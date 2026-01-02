@@ -111,6 +111,8 @@ export const VALUES: ValueItem[] = [
   { title: "Global Presence", description: "A vast network of international partners for your ease.", icon: "fa-earth-americas" }
 ];
 
+export const CONTACT2 = "/contact/contact-2.jpg";
+
 export const SOCIAL_LINKS = [
   { icon: "fa-facebook", url: "#", name: "Facebook" },
   { icon: "fa-instagram", url: "#", name: "Instagram" },

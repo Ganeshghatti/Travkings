@@ -70,7 +70,7 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-10">
-          {['Home', 'About', 'Services', 'Contact'].map((item) => (
+          {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
             <Link 
               key={item} 
               href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
@@ -103,7 +103,7 @@ const Navbar: React.FC = () => {
             height={64}
             className="w-auto h-16 mb-4"
           />
-          {['Home', 'About', 'Services', 'Contact'].map((item) => (
+          {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
             <Link 
               key={item} 
               href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
