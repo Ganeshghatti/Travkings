@@ -39,8 +39,10 @@ export default function AdminLoginPage() {
         return
       }
 
-      // Prefer callbackUrl returned by NextAuth when present
-      router.replace(result?.url ?? '/admin')
+      // Force a hard navigation so the server layout re-renders with the new auth cookie.
+      // This avoids the "unstyled admin until refresh" issue caused by reusing the same
+      // /admin layout segment across login -> dashboard in a single client session.
+      window.location.assign(result?.url ?? '/admin')
     } finally {
       setIsSubmitting(false)
     }
