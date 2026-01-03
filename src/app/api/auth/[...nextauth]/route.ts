@@ -44,9 +44,9 @@ export const authOptions: NextAuthOptions = {
   },
   // NextAuth requires a secret - use env var or fallback (must be at least 32 chars)
   secret: secretValue,
-  pages:{
-    signIn: '/api/auth/signin',
-  },
+  // pages:{
+  //   signIn: '/api/auth/signin',
+  // },
   callbacks: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     async jwt({ token, user }: { token: any; user?: any }) {
