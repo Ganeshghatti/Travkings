@@ -2,11 +2,11 @@
 
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
-import PackageForm from './PackageForm'
+import PackageForm, { type PackageFormData } from './PackageForm'
 
 interface EditPackageFormProps {
   packageId: string
-  initialData: any
+  initialData: Partial<PackageFormData> & Record<string, unknown>
 }
 
 export default function EditPackageForm({ packageId, initialData }: EditPackageFormProps) {

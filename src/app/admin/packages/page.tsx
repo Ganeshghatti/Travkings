@@ -7,6 +7,25 @@ import PackageList from '@/components/admin/PackageList'
 import Link from 'next/link'
 import Button from '@/components/admin/Button'
 
+type PackageFilter = {
+  isActive?: boolean
+  isFeatured?: boolean
+}
+
+type TravelPackageLean = {
+  _id: { toString(): string }
+  title: string
+  slug: string
+  thumbnail?: string
+  price: number
+  currency: string
+  destination: string
+  category: string
+  isActive: boolean
+  isFeatured: boolean
+  createdAt?: Date
+}
+
 export default async function PackagesPage({
   searchParams,
 }: {
@@ -23,7 +42,7 @@ export default async function PackagesPage({
   // Await searchParams (Next.js 15+ requirement)
   const params = await searchParams
 
-  const query: any = {}
+  const query: PackageFilter = {}
   if (params.isActive !== undefined) {
     query.isActive = params.isActive === 'true'
   }
@@ -31,14 +50,14 @@ export default async function PackagesPage({
     query.isFeatured = params.isFeatured === 'true'
   }
 
-  const packages = await TravelPackage.find(query).sort({ createdAt: -1 }).lean()
+  const packages = (await TravelPackage.find(query).sort({ createdAt: -1 }).lean()) as TravelPackageLean[]
 
   // Serialize MongoDB documents to plain objects
-  const serializedPackages = packages.map((pkg: any) => ({
-    _id: pkg._id.toString(),
+  const serializedPackages = packages.map((pkg) => ({
+    _id: pkg._id?.toString?.() ?? String(pkg._id),
     title: pkg.title,
     slug: pkg.slug,
-    thumbnail: pkg.thumbnail,
+    thumbnail: pkg.thumbnail ?? '',
     price: pkg.price,
     currency: pkg.currency,
     destination: pkg.destination,

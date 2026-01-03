@@ -1,11 +1,11 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import FormField from './FormField'
 import Button from './Button'
 import Image from 'next/image'
 
-interface PackageFormData {
+export interface PackageFormData {
   title: string
   slug: string
   description: string
@@ -66,41 +66,31 @@ export default function PackageForm({ initialData, onSubmit, isSubmitting = fals
     thumbnail: initialData?.thumbnail,
   })
 
-  const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(null)
+  const [thumbnailPreview, setThumbnailPreview] = useState<string | null>(
+    typeof initialData?.thumbnail === 'string' && initialData.thumbnail
+      ? `/packages/${initialData.thumbnail}`
+      : null
+  )
   const [newDestination, setNewDestination] = useState('')
   const [newInclusion, setNewInclusion] = useState('')
   const [newExclusion, setNewExclusion] = useState('')
   const [newHighlight, setNewHighlight] = useState('')
   const [newTag, setNewTag] = useState('')
+  const [isSlugManuallyEdited, setIsSlugManuallyEdited] = useState(Boolean(initialData?.slug))
 
-  // Generate slug from title
-  useEffect(() => {
-    if (!initialData?.slug && formData.title) {
-      const slug = formData.title
-        .toLowerCase()
-        .replace(/[^a-z0-9]+/g, '-')
-        .replace(/(^-|-$)/g, '')
-      setFormData(prev => ({ ...prev, slug }))
-    }
-  }, [formData.title, initialData?.slug])
-
-  // Handle thumbnail preview
-  useEffect(() => {
-    if (typeof formData.thumbnail === 'string' && formData.thumbnail) {
-      setThumbnailPreview(`/packages/${formData.thumbnail}`)
-    } else if (formData.thumbnail instanceof File) {
-      const reader = new FileReader()
-      reader.onloadend = () => {
-        setThumbnailPreview(reader.result as string)
-      }
-      reader.readAsDataURL(formData.thumbnail)
-    }
-  }, [formData.thumbnail])
+  const toSlug = (value: string) =>
+    value
+      .toLowerCase()
+      .replace(/[^a-z0-9]+/g, '-')
+      .replace(/(^-|-$)/g, '')
 
   const handleThumbnailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0]
     if (file) {
       setFormData(prev => ({ ...prev, thumbnail: file }))
+      const reader = new FileReader()
+      reader.onloadend = () => setThumbnailPreview(reader.result as string)
+      reader.readAsDataURL(file)
     }
   }
 
@@ -154,14 +144,24 @@ export default function PackageForm({ initialData, onSubmit, isSubmitting = fals
             label="Title"
             name="title"
             value={formData.title}
-            onChange={(e) => setFormData(prev => ({ ...prev, title: e.target.value }))}
+            onChange={(e) => {
+              const nextTitle = e.target.value
+              setFormData((prev) => ({
+                ...prev,
+                title: nextTitle,
+                slug: !isSlugManuallyEdited && !initialData?.slug ? toSlug(nextTitle) : prev.slug,
+              }))
+            }}
             required
           />
           <FormField
             label="Slug"
             name="slug"
             value={formData.slug}
-            onChange={(e) => setFormData(prev => ({ ...prev, slug: e.target.value }))}
+            onChange={(e) => {
+              setIsSlugManuallyEdited(true)
+              setFormData((prev) => ({ ...prev, slug: e.target.value }))
+            }}
             required
           />
         </div>

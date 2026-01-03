@@ -1,5 +1,4 @@
 import { getServerSession } from 'next-auth'
-import { redirect } from 'next/navigation'
 import { authOptions } from '@/app/api/auth/[...nextauth]/route'
 import Sidebar from '@/components/admin/Sidebar'
 import AdminHeader from '@/components/admin/AdminHeader'
@@ -12,9 +11,11 @@ export default async function AdminLayout({
 }) {
   const session = await getServerSession(authOptions)
 
-  // Redirect to login if not authenticated (middleware should handle this, but double-check)
+  // Important: do NOT redirect from the admin layout when unauthenticated.
+  // The login page lives under /admin/login and shares this layout segment,
+  // so redirecting here would create an infinite loop.
   if (!session) {
-    redirect('/api/auth/signin')
+    return <SessionProvider>{children}</SessionProvider>
   }
 
   return (
@@ -23,9 +24,7 @@ export default async function AdminLayout({
         <Sidebar />
         <div className="lg:pl-64">
           <AdminHeader />
-          <main className="p-6">
-            {children}
-          </main>
+          <main className="p-6">{children}</main>
         </div>
       </div>
     </SessionProvider>

@@ -3,7 +3,6 @@
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import Modal from './Modal'
-import Button from './Button'
 
 interface DeletePackageButtonProps {
   packageId: string
@@ -13,10 +12,8 @@ interface DeletePackageButtonProps {
 export default function DeletePackageButton({ packageId, packageTitle }: DeletePackageButtonProps) {
   const router = useRouter()
   const [isModalOpen, setIsModalOpen] = useState(false)
-  const [isDeleting, setIsDeleting] = useState(false)
 
   const handleDelete = async () => {
-    setIsDeleting(true)
     try {
       const response = await fetch(`/api/packages/${packageId}`, {
         method: 'DELETE',
@@ -31,8 +28,6 @@ export default function DeletePackageButton({ packageId, packageTitle }: DeleteP
     } catch (error) {
       console.error('Error deleting package:', error)
       alert('An error occurred while deleting the package')
-    } finally {
-      setIsDeleting(false)
     }
   }
 

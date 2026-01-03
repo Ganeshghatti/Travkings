@@ -42,6 +42,20 @@ export default async function EditPackagePage({
     updatedAt: packageData.updatedAt ? new Date(packageData.updatedAt).toISOString() : new Date().toISOString(),
     departureDates: packageData.departureDates?.map((d: Date) => new Date(d).toISOString()) || [],
     bookingDeadline: packageData.bookingDeadline ? new Date(packageData.bookingDeadline).toISOString() : undefined,
+    destinations: packageData.destinations || [],
+    inclusions: packageData.inclusions || [],
+    exclusions: packageData.exclusions || [],
+    highlights: packageData.highlights || [],
+    tags: packageData.tags || [],
+    itinerary:
+      packageData.itinerary?.map(
+        (day: { day?: number; title?: string; description?: string; activities?: string[] }) => ({
+          day: day.day ?? 1,
+          title: day.title ?? '',
+          description: day.description ?? '',
+          activities: day.activities ?? [],
+        })
+      ) || [],
   }
 
   return (

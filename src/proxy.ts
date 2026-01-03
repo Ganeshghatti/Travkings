@@ -117,10 +117,9 @@ export default withAuth(
   {
     callbacks: {
       authorized: async ({ token, req }) => {
-        // Only protect /admin/* routes, exclude NextAuth pages
+        // Only protect /admin/* routes, allow the login page.
         if (req.nextUrl.pathname.startsWith('/admin')) {
-          // Allow access to NextAuth API routes and sign-in page
-          if (req.nextUrl.pathname.startsWith('/api/auth/')) {
+          if (req.nextUrl.pathname === '/admin/login') {
             return true
           }
           // Require authentication for all other admin routes
@@ -130,9 +129,9 @@ export default withAuth(
         return true
       },
     },
-    // Use NextAuth's default sign-in page
+    // Must be a real page route (NOT an /api route).
     pages: {
-      signIn: '/api/auth/signin',
+      signIn: '/admin/login',
     },
   }
 )

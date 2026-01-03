@@ -45,7 +45,8 @@ export const authOptions: NextAuthOptions = {
   // NextAuth requires a secret - use env var or fallback (must be at least 32 chars)
   secret: secretValue,
   pages:{
-    signIn: '/api/auth/signin',
+    // Must be a real page route (NOT an /api route), otherwise it can loop.
+    signIn: '/admin/login',
   },
   callbacks: {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
