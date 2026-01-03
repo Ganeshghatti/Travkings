@@ -3,6 +3,7 @@ import Carousel from '@/components/Carousel';
 import MarketingPopup from '@/components/MarketingPopup';
 import { SERVICES, VALUES } from '@/lib/constants';
 
+
 export default function Home() {
   return (
     <div className="overflow-hidden bg-white">
@@ -44,7 +45,7 @@ export default function Home() {
               </div>
               <div className="absolute -bottom-12 -left-12 w-48 h-48 bg-uocGold/10 -z-10" />
               <div className="absolute top-12 -right-12 p-10 bg-brownCoffee shadow-2xl text-white hidden md:block max-w-[280px]">
-                <p className="text-uocGold font-bold italic text-xl leading-brand mb-2">"Excellence in every mile."</p>
+                <p className="text-uocGold font-bold italic text-xl leading-brand mb-2">&quot;Excellence in every mile.&quot;</p>
                 <div className="w-8 h-[1px] bg-uocGold mb-2"></div>
                 <p className="text-[10px] uppercase tracking-widest text-white/60">Kings Group Africa</p>
               </div>
@@ -117,7 +118,7 @@ export default function Home() {
                     <h2 className="text-4xl md:text-5xl font-medium tracking-headline text-brownCoffee uppercase leading-brand">Prestige Built on <span className="text-brandy">Trust</span></h2>
                  </div>
                  <p className="text-lg text-brownCoffee/80 font-normal leading-brand">
-                   Since inception, Travkings has built a reputation for reliability, professionalism, and personalized travel solutions. We don't just plan trips—we create journeys that inspire, connect, and elevate your travel experience.
+                   Since inception, Travkings has built a reputation for reliability, professionalism, and personalized travel solutions. We don&apos;t just plan trips—we create journeys that inspire, connect, and elevate your travel experience.
                  </p>
                  <div className="space-y-6 pt-4">
                     {[

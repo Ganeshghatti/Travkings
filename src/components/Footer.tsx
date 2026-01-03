@@ -65,15 +65,15 @@ const Footer: React.FC = () => {
           <ul className="space-y-6 text-sm font-normal">
             <li className="flex items-start space-x-4">
               <i className="fa-solid fa-location-dot mt-1 text-uocGold"></i>
-              <span>123 Travel Avenue, Suite 500,<br />City Center, Kings Plaza.</span>
+              <span>603, Venus Tower, Veera Desai Rd,<br />Andheri (W), Mumbai.</span>
             </li>
             <li className="flex items-center space-x-4">
               <i className="fa-solid fa-phone text-uocGold"></i>
-              <span>+1 234 567 890</span>
+              <span>+91 88280 06599</span>
             </li>
             <li className="flex items-center space-x-4">
               <i className="fa-solid fa-envelope text-uocGold"></i>
-              <span>concierge@travkings.com</span>
+              <span>holidays@travkings.com</span>
             </li>
           </ul>
         </div>

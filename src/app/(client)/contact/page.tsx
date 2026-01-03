@@ -1,4 +1,7 @@
-import React from 'react';
+import Image from "next/image";
+
+import { CONTACT2 } from "@/lib/constants";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
@@ -32,7 +35,7 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Our Office</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">123 Travel Avenue, Suite 500,<br />City Center, Kings Plaza.</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">603, Venus Tower, Veera Desai Rd,<br />Andheri (W), Mumbai.</p>
                         </div>
                      </div>
                      <div className="flex items-start gap-8">
@@ -41,8 +44,8 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Phone Number</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">+1 234 567 890</p>
-                           <p className="text-brownCoffee/70 text-sm font-normal">+1 987 654 321</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">+91 88280 06599</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">+91 88280 08399 </p>
                         </div>
                      </div>
                      <div className="flex items-start gap-8">
@@ -51,8 +54,8 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Email Address</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">concierge@travkings.com</p>
-                           <p className="text-brownCoffee/70 text-sm font-normal">support@travkings.com</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">holidays@travkings.com</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">ticketing@travkings.com</p>
                         </div>
                      </div>
                   </div>
@@ -70,43 +73,7 @@ export default function Contact() {
 
                {/* Contact Form */}
                <div className="lg:w-2/3">
-                  <div className="bg-slate-50 p-12 md:p-20 border border-slate-100 shadow-sm">
-                     <h3 className="text-3xl font-medium tracking-headline text-brownCoffee uppercase mb-12">Send Us a Message</h3>
-                     <form className="space-y-8">
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                           <div className="space-y-3">
-                              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-brownCoffee/40">Full Name</label>
-                              <input type="text" className="w-full bg-white border border-slate-200 p-5 rounded-none focus:outline-none focus:border-brandy text-brownCoffee transition-all" placeholder="Enter name" />
-                           </div>
-                           <div className="space-y-3">
-                              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-brownCoffee/40">Email Address</label>
-                              <input type="email" className="w-full bg-white border border-slate-200 p-5 rounded-none focus:outline-none focus:border-brandy text-brownCoffee transition-all" placeholder="Enter email" />
-                           </div>
-                        </div>
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                           <div className="space-y-3">
-                              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-brownCoffee/40">Service Needed</label>
-                              <select className="w-full bg-white border border-slate-200 p-5 rounded-none focus:outline-none focus:border-brandy text-brownCoffee appearance-none">
-                                 <option>Corporate Management</option>
-                                 <option>Luxury Holidays</option>
-                                 <option>Air Ticketing</option>
-                                 <option>Visa Assistance</option>
-                              </select>
-                           </div>
-                           <div className="space-y-3">
-                              <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-brownCoffee/40">Travel Date</label>
-                              <input type="date" className="w-full bg-white border border-slate-200 p-5 rounded-none focus:outline-none focus:border-brandy text-brownCoffee transition-all" />
-                           </div>
-                        </div>
-                        <div className="space-y-3">
-                           <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-brownCoffee/40">Your Message</label>
-                           <textarea className="w-full bg-white border border-slate-200 p-5 rounded-none h-48 focus:outline-none focus:border-brandy text-brownCoffee transition-all" placeholder="Describe your dream journey..."></textarea>
-                        </div>
-                        <button className="w-full bg-brandy hover:bg-brownCoffee text-white font-medium text-xs uppercase tracking-[0.2em] py-6 transition-all duration-500 shadow-xl">
-                           Submit Inquiry
-                        </button>
-                     </form>
-                  </div>
+                  <ContactForm />
                </div>
             </div>
          </div>
@@ -114,7 +81,7 @@ export default function Contact() {
 
       {/* Map Placeholder */}
       <section className="h-[500px] w-full bg-slate-200 grayscale contrast-125 overflow-hidden border-t border-slate-100">
-         <img src="https://images.unsplash.com/photo-1526772662000-3f88f10405ff?q=80&w=1920&auto=format&fit=crop" alt="Map Location" className="w-full h-full object-cover" />
+         <Image src={CONTACT2} alt="Map Location" className="w-full h-full object-cover" fill />
       </section>
     </div>
   );
