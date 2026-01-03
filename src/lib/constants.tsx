@@ -32,12 +32,13 @@ export const SERVICES: Service[] = [
     id: "air-ticketing",
     title: "Air Ticketing",
     icon: "fa-plane-departure",
-    imageUrl: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1208&auto=format&fit=crop",
-    description: "Domestic and International flights with competitive fares and 24/7 concierge support.",
+    imageUrl: "https://images.unsplash.com/photo-1694716549854-f26e21e70c04?w=800&auto=format&fit=crop",
+    description: "Domestic and International flights powered by strong partnerships with renowned global airlines, including IATA and top budget carriers.",
     features: [
       "Competitive fares & flexible options",
       "24/7 support & itinerary management",
-      "Multi-city & round-trip expertise"
+      "Multi-city & round-trip expertise",
+      "Zero Compromise on Comfort, efficiency & Convenience."
     ]
   },
   {
@@ -49,7 +50,8 @@ export const SERVICES: Service[] = [
     features: [
       "Family & honeymoon packages",
       "Adventure & luxury holidays",
-      "Specialist-curated experiences"
+      "Specialist-curated experiences",
+      "Specialized Group Packages"
     ]
   },
   {
@@ -97,7 +99,21 @@ export const SERVICES: Service[] = [
     features: [
       "Ground transportation",
       "Foreign exchange support",
-      "Travel insurance coverage"
+      "Travel insurance coverage",
+      "Meet & Assist Service"
+    ]
+  },
+  {
+    id: "private-jet-charters",
+    title: "Private Jet & Charters Flights",
+    icon: "fa-plane-departure",
+    imageUrl: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?q=80&w=1208&auto=format&fit=crop",
+    description: "Exclusive private aviation services with luxury aircraft, personalized flight experiences, and premium concierge support for discerning travelers.",
+    features: [
+      "Light jets, mid-size & heavy jets available",
+      "On-demand charter & scheduled services",
+      "Luxury cabin amenities & catering",
+      "Private terminal access & expedited security",
     ]
   }
 ];

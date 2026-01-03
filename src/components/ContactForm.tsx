@@ -151,12 +151,11 @@ export default function ContactForm() {
               required
               className="w-full bg-white border border-slate-200 p-5 rounded-none focus:outline-none focus:border-brandy text-brownCoffee appearance-none"
             >
-              <option value="Corporate Management">Corporate Management</option>
-              <option value="Luxury Holidays">Luxury Holidays</option>
-              <option value="Air Ticketing">Air Ticketing</option>
-              <option value="Visa Assistance">Visa Assistance</option>
-              <option value="Tour Packages">Tour Packages</option>
-              <option value="Holiday Bookings">Holiday Bookings</option>
+              <option value="Corporate Management">Air Ticketing</option>
+              <option value="Luxury Holidays">Hotels & Holidays</option>
+              <option value="Air Ticketing">Visa Assistance</option>
+              <option value="Visa Assistance">Corporate Travel</option>
+              <option value="Tour Packages">Other Services</option>
             </select>
           </div>
           <div className="space-y-3">

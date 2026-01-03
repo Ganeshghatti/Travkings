@@ -33,8 +33,8 @@ const Navbar: React.FC = () => {
         <div className="hidden lg:block border-b border-white/10 pb-3 mb-3">
           <div className="container mx-auto px-6 flex justify-between items-center text-[10px] tracking-widest uppercase font-medium text-white/80">
             <div className="flex items-center space-x-6">
-              <span className="flex items-center"><i className="fa-solid fa-phone mr-2 text-uocGold"></i> +1 234 567 890</span>
-              <span className="flex items-center"><i className="fa-solid fa-envelope mr-2 text-uocGold"></i> contact@travkings.com</span>
+              <span className="flex items-center"><i className="fa-solid fa-phone mr-2 text-uocGold"></i> +91 88280 06599</span>
+              <span className="flex items-center"><i className="fa-solid fa-envelope mr-2 text-uocGold"></i> holidays@travkings.com</span>
             </div>
             <div className="flex items-center space-x-5">
               {SOCIAL_LINKS.map(social => (

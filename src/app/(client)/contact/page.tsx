@@ -35,7 +35,7 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Our Office</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">123 Travel Avenue, Suite 500,<br />City Center, Kings Plaza.</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">603, Venus Tower, Veera Desai Rd,<br />Andheri (W), Mumbai.</p>
                         </div>
                      </div>
                      <div className="flex items-start gap-8">
@@ -44,8 +44,8 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Phone Number</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">+1 234 567 890</p>
-                           <p className="text-brownCoffee/70 text-sm font-normal">+1 987 654 321</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">+91 88280 06599</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">+91 88280 08399 </p>
                         </div>
                      </div>
                      <div className="flex items-start gap-8">
@@ -54,8 +54,8 @@ export default function Contact() {
                         </div>
                         <div className="space-y-1">
                            <h4 className="font-medium tracking-headline text-brownCoffee text-sm uppercase">Email Address</h4>
-                           <p className="text-brownCoffee/70 text-sm font-normal">concierge@travkings.com</p>
-                           <p className="text-brownCoffee/70 text-sm font-normal">support@travkings.com</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">holidays@travkings.com</p>
+                           <p className="text-brownCoffee/70 text-sm font-normal">ticketing@travkings.com</p>
                         </div>
                      </div>
                   </div>
