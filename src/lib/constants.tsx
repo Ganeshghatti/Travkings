@@ -9,15 +9,15 @@ export const COMPANY_LOGO_ICON = "/primary_logomark_mobile.svg";
 export const CAROUSEL_ITEMS: CarouselItem[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1920&auto=format&fit=crop",
-    title: "Bespoke Luxury Holidays",
-    subtitle: "Tailored experiences crafted with precision for your ultimate comfort."
-  },
-  {
-    id: 2,
     image: "https://images.unsplash.com/photo-1569154941061-e231b4725ef1?q=80&w=1920&auto=format&fit=crop",
     title: "Corporate Excellence",
     subtitle: "End-to-end travel management for professionals and organizations."
+  },
+  {
+    id: 2,
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=1920&auto=format&fit=crop",
+    title: "Bespoke Luxury Holidays",
+    subtitle: "Tailored experiences crafted with precision for your ultimate comfort."
   },
   {
     id: 3,

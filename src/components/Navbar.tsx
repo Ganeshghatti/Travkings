@@ -31,7 +31,7 @@ const Navbar: React.FC = () => {
       {/* Top bar */}
       {!scrolled && (
         <div className="hidden lg:block border-b border-white/10 pb-3 mb-3">
-          <div className="container mx-auto px-6 flex justify-between items-center text-[10px] tracking-widest uppercase font-medium text-white/80">
+          <div className="container mx-auto px-6 flex justify-between items-center text-[10px] tracking-widest font-medium text-white/80">
             <div className="flex items-center space-x-6">
               <span className="flex items-center"><i className="fa-solid fa-phone mr-2 text-uocGold"></i> +91 88280 06599</span>
               <span className="flex items-center"><i className="fa-solid fa-envelope mr-2 text-uocGold"></i> holidays@travkings.com</span>
@@ -84,42 +84,58 @@ const Navbar: React.FC = () => {
           </Link>
         </div>
 
-        {/* Mobile Toggle */}
+        {/* Mobile Toggle - Only show hamburger when closed */}
         <button 
-          className="lg:hidden text-2xl text-white"
+          className={`lg:hidden text-2xl text-white ${isOpen ? 'hidden' : 'block'}`}
           onClick={() => setIsOpen(!isOpen)}
         >
-          <i className={`fa-solid ${isOpen ? 'fa-xmark' : 'fa-bars-staggered'}`}></i>
+          <i className="fa-solid fa-bars-staggered"></i>
         </button>
       </div>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 bg-brownCoffee z-40 transform transition-transform duration-500 lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
-        <div className="flex flex-col h-full items-center justify-center space-y-10 text-white">
+      <div className={`fixed inset-0 bg-brownCoffee z-60 transform transition-transform duration-500 lg:hidden ${isOpen ? 'translate-x-0' : 'translate-x-full'}`}>
+        {/* Header with Close Button */}
+        <div className="flex justify-between items-center p-6">
           <Image 
             src={COMPANY_LOGO_ICON} 
             alt="Travkings" 
-            width={64}
-            height={64}
-            className="w-auto h-16 mb-4"
+            width={48}
+            height={48}
+            className="w-auto h-12"
           />
+          <button 
+            className="text-3xl text-white hover:text-uocGold transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
+            <i className="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        
+        {/* Menu Content */}
+        <div className="flex flex-col h-full items-center justify-center space-y-10 text-white -mt-10">
           {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
             <Link 
               key={item} 
               href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
               className="text-3xl font-medium tracking-headline uppercase hover:text-uocGold transition-colors"
+              onClick={() => setIsOpen(false)}
             >
               {item}
             </Link>
           ))}
           <div className="flex space-x-8 text-2xl pt-6">
              {SOCIAL_LINKS.map(social => (
-                <a key={social.name} href={social.url} className="hover:text-uocGold">
+                <a key={social.name} href={social.url} className="hover:text-uocGold transition-colors">
                   <i className={`fa-brands ${social.icon}`}></i>
                 </a>
               ))}
           </div>
-          <Link href="/contact" className="bg-brandy text-white px-12 py-4 rounded-none text-sm font-medium uppercase tracking-widest mt-6">
+          <Link 
+            href="/contact" 
+            className="bg-brandy text-white px-12 py-4 rounded-none text-sm font-medium uppercase tracking-widest mt-6 hover:bg-brownCoffee transition-colors"
+            onClick={() => setIsOpen(false)}
+          >
             Consult An Expert
           </Link>
         </div>
