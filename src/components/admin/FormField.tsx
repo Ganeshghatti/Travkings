@@ -1,23 +1,28 @@
-import React from 'react'
+import React from "react";
 
 interface FormFieldProps {
-  label: string
-  name: string
-  type?: string
-  value?: string | number
-  onChange?: (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => void
-  placeholder?: string
-  required?: boolean
-  error?: string
-  children?: React.ReactNode
-  textarea?: boolean
-  rows?: number
+  label: string;
+  name: string;
+  type?: string;
+  value?: string | number;
+  onChange?: (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => void;
+  placeholder?: string;
+  required?: boolean;
+  error?: string;
+  children?: React.ReactNode;
+  textarea?: boolean;
+  rows?: number;
+  options?: Array<{ value: string; label: string }>;
 }
 
 export default function FormField({
   label,
   name,
-  type = 'text',
+  type = "text",
   value,
   onChange,
   placeholder,
@@ -26,17 +31,22 @@ export default function FormField({
   children,
   textarea = false,
   rows = 4,
+  options,
 }: FormFieldProps) {
-  const baseInputStyles = 'w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-uocGold focus:border-transparent outline-none transition-all text-gray-900 bg-white'
-  const errorStyles = error ? 'border-red-500' : 'border-gray-300'
-  
+  const baseInputStyles =
+    "w-full px-4 py-2 border rounded-lg focus:ring-2 focus:ring-uocGold focus:border-transparent outline-none transition-all text-gray-900 bg-white";
+  const errorStyles = error ? "border-red-500" : "border-gray-300";
+
   return (
     <div className="mb-4">
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700 mb-2">
+      <label
+        htmlFor={name}
+        className="block text-sm font-medium text-gray-700 mb-2"
+      >
         {label}
         {required && <span className="text-red-500 ml-1">*</span>}
       </label>
-      
+
       {textarea ? (
         <textarea
           id={name}
@@ -48,6 +58,21 @@ export default function FormField({
           rows={rows}
           className={`${baseInputStyles} ${errorStyles} text-gray-900 bg-white`}
         />
+      ) : type === "select" && options ? (
+        <select
+          id={name}
+          name={name}
+          value={value}
+          onChange={onChange}
+          required={required}
+          className={`${baseInputStyles} ${errorStyles}`}
+        >
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
       ) : children ? (
         children
       ) : (
@@ -62,11 +87,8 @@ export default function FormField({
           className={`${baseInputStyles} ${errorStyles}`}
         />
       )}
-      
-      {error && (
-        <p className="mt-1 text-sm text-red-600">{error}</p>
-      )}
-    </div>
-  )
-}
 
+      {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
+    </div>
+  );
+}
