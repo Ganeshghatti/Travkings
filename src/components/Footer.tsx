@@ -157,7 +157,7 @@ const Footer: React.FC = () => {
             </li>
             <li className="flex items-center space-x-4">
               <i className="fa-solid fa-envelope text-uocGold"></i>
-              <span>ticketing@travkings.co</span>
+              <span>ticketing@travkings.com</span>
             </li>
           </ul>
         </div>
