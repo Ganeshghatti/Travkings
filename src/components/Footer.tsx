@@ -169,10 +169,10 @@ const Footer: React.FC = () => {
           | Kings Group Africa
         </p>
         <div className="mt-4 md:mt-0 space-x-6">
-          <Link href="#" className="hover:text-uocGold">
+          <Link href="/privacy-policy" className="hover:text-uocGold">
             Privacy Policy
           </Link>
-          <Link href="#" className="hover:text-uocGold">
+          <Link href="/terms-and-conditions" className="hover:text-uocGold">
             Terms of Excellence
           </Link>
         </div>
