@@ -143,6 +143,7 @@ export const VALUES: ValueItem[] = [
     title: "Customer-Centricity",
     description: "Every journey is tailored to individual preferences.",
     icon: "fa-heart",
+    
   },
   {
     title: "Integrity & Transparency",
@@ -174,7 +175,6 @@ export const VALUES: ValueItem[] = [
 export const CONTACT2 = "/contact/contact-2.jpg";
 
 export const SOCIAL_LINKS = [
-  { icon: "fa-facebook", url: "#", name: "Facebook" },
-  { icon: "fa-instagram", url: "#", name: "Instagram" },
-  { icon: "fa-linkedin", url: "#", name: "LinkedIn" },
+  { icon: "fa-instagram", url: "https://www.instagram.com/travkings_/", name: "Instagram" },
+  { icon: "fa-linkedin", url: "https://www.linkedin.com/company/travkings-tours-travels", name: "LinkedIn" },
 ];
