@@ -6,7 +6,7 @@ export default function Services() {
       {/* Header */}
       <div className="bg-brownCoffee pt-70 pb-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20 grayscale" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?q=80&w=1920&auto=format&fit=crop)` }}></div>
-        <div className="container mx-auto px-6 relative text-center space-y-6">
+        <div className="container mx-auto px-3 md:px-6 relative text-center space-y-6">
            <span className="text-uocGold font-medium text-xs uppercase tracking-[0.4em] block">Our Portfolio</span>
            <h1 className="text-5xl md:text-8xl font-medium tracking-headline text-white uppercase leading-brand">Our Services</h1>
            <div className="w-20 h-[2px] bg-brandy mx-auto"></div>
@@ -15,7 +15,7 @@ export default function Services() {
 
       {/* Services Listing */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-3 md:px-6">
           <div className="space-y-40">
             {SERVICES.map((service, index) => (
               <div key={service.id} className={`flex flex-col lg:flex-row items-center gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}>
@@ -52,7 +52,7 @@ export default function Services() {
 
       {/* Trust & Support */}
       <section className="py-32 bg-slate-50 border-y border-slate-100">
-         <div className="container mx-auto px-6 text-center max-w-5xl space-y-12">
+         <div className="container mx-auto px-3 md:px-6 text-center max-w-5xl space-y-12">
             <span className="text-uocGold font-medium text-xs uppercase tracking-[0.3em] block">World-Class Assurance</span>
             <h2 className="text-4xl md:text-5xl font-medium tracking-headline text-brownCoffee uppercase leading-brand">Comprehensive 24/7 Support</h2>
             <p className="text-xl text-brownCoffee/60 max-w-3xl mx-auto font-normal leading-brand italic">
