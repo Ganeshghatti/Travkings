@@ -50,21 +50,21 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-6 flex justify-between items-center">
         <Link href="/" className="flex items-center group">
           {/* Responsive Logos - Removed inversion filter to preserve gold color */}
-          <Image 
+          {/* <Image 
             src={COMPANY_LOGO_ICON} 
             alt="Travkings Icon" 
             width={48}
             height={48}
             priority
             className={`lg:hidden w-auto transition-all duration-500 ${scrolled ? 'h-10' : 'h-12'}`} 
-          />
+          /> */}
           <Image 
             src={COMPANY_LOGO_WIDE} 
             alt="Travkings Logo" 
             width={200}
             height={64}
             priority
-            className={`hidden lg:block w-auto transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'}`} 
+            className={`w-32 md:w-auto object-contain transition-all duration-500 ${scrolled ? 'h-12' : 'h-16'}`} 
           />
         </Link>
 
