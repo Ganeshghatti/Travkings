@@ -51,7 +51,7 @@ export default async function PackagesPage() {
           className="absolute inset-0 bg-cover bg-center opacity-20 grayscale" 
           style={{ backgroundImage: `url(https://images.unsplash.com/photo-1501785888041-af3ef285b470?q=80&w=1920&auto=format&fit=crop)` }}
         ></div>
-        <div className="container mx-auto px-6 relative text-center space-y-6">
+        <div className="container mx-auto px-3 md:px-6 relative text-center space-y-6">
           <span className="text-uocGold font-medium text-xs uppercase tracking-[0.4em] block">Curated Journeys</span>
           <h1 className="text-5xl md:text-8xl font-medium tracking-headline text-white uppercase leading-brand">Exclusive Packages</h1>
           <div className="w-20 h-[2px] bg-brandy mx-auto"></div>
@@ -60,7 +60,7 @@ export default async function PackagesPage() {
 
       {/* Package List or No Packages Message */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-3 md:px-6">
           {!packages || packages.length === 0 ? (
             <div className="text-center">
               <div className="max-w-2xl mx-auto space-y-6">

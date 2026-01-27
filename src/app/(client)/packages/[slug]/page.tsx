@@ -238,7 +238,7 @@ export default async function PackageDetailPage({
               <div className="bg-slate-50 border border-slate-100 p-8 text-center space-y-4">
                 <h4 className="text-brownCoffee font-medium uppercase text-sm tracking-widest">Need Advice?</h4>
                 <p className="text-xs text-brownCoffee/60">Speak to a destination specialist.</p>
-                <p className="text-xl text-uocGold font-medium">+1 234 567 890</p>
+                <p className="text-xl text-uocGold font-medium">+91 88280 08399</p>
               </div>
             </div>
           </div>

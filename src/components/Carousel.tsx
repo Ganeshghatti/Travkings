@@ -20,7 +20,9 @@ const Carousel: React.FC = () => {
         <div
           key={item.id}
           className={`absolute inset-0 transition-opacity duration-1000 ${
-            index === current ? "opacity-100" : "opacity-0"
+            index === current
+              ? "opacity-100 pointer-events-auto"
+              : "opacity-0 pointer-events-none"
           }`}
         >
           {/* Background Image */}
@@ -32,12 +34,12 @@ const Carousel: React.FC = () => {
           <div className="absolute inset-0 bg-linear-to-b from-brownCoffee/40 via-brownCoffee/10 to-brownCoffee/60" />
 
           {/* Content */}
-          <div className="relative h-full container mx-auto px-6 flex flex-col justify-center items-center text-center">
+          <div className="relative h-full container mx-auto px-6 flex flex-col justify-center  items-center text-center">
             <div
-              className={`max-w-4xl transform transition-all duration-1000 delay-300 ${
+              className={`max-w-4xl mt-auto mb-auto transform transition-all duration-1000 ${
                 index === current
                   ? "translate-y-0 opacity-100"
-                  : "translate-y-12 opacity-0"
+                  : "translate-y-0 opacity-0"
               }`}
             >
               <div className="flex justify-center items-center space-x-3 mb-6">
@@ -55,20 +57,40 @@ const Carousel: React.FC = () => {
               <p className="text-lg md:text-xl text-white/90 mb-12 leading-brand font-normal max-w-2xl mx-auto">
                 {item.subtitle}
               </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+                <div
+                  className={` ${index == 1 ? "-translate-y-6" : "translate-y-0"}
+      bg-brandy
+      hover:bg-white hover:text-brandy
+      text-white
+      px-10 py-5
+      rounded-none
+      font-medium text-xs uppercase tracking-widest
+      transition-colors duration-500
+      shadow-2xl
+      min-w-50
+      border border-transparent
+    `}
+                >
+                  <Link href="/services">View Experiences</Link>
+                </div>
 
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                <Link
-                  href="/services"
-                  className="bg-brandy hover:bg-white hover:text-brandy text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest transition-all duration-500 shadow-2xl min-w-50"
+                <div
+                  className={` ${index == 1 ? "-translate-y-6" : "translate-y-0"}
+      bg-white/10
+      hover:bg-uocGold
+      backdrop-blur-md
+      text-white
+      px-10 py-5
+      rounded-none
+      font-medium text-xs uppercase tracking-widest
+      transition-colors duration-500
+      border border-white/20
+      min-w-50
+    `}
                 >
-                  View Experiences
-                </Link>
-                <Link
-                  href="/about"
-                  className="bg-white/10 hover:bg-uocGold backdrop-blur-md text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest transition-all duration-500 border border-white/20 min-w-50"
-                >
-                  Our Story
-                </Link>
+                  <Link href="/about">Our Story</Link>
+                </div>
               </div>
             </div>
           </div>

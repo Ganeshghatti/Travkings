@@ -6,7 +6,7 @@ export default function About() {
       {/* Premium Header */}
       <div className="bg-brownCoffee pt-70 pb-50 relative overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center opacity-20 grayscale" style={{ backgroundImage: `url(https://images.unsplash.com/photo-1488646953014-85cb44e25828?q=80&w=1920&auto=format&fit=crop)` }}></div>
-        <div className="container mx-auto px-6 relative text-center space-y-6">
+        <div className="container mx-auto px-3 md:px-6 relative text-center space-y-6">
            <span className="text-uocGold font-medium text-xs uppercase tracking-[0.4em] block">Our Legacy</span>
            <h1 className="text-5xl md:text-8xl font-medium tracking-headline text-white uppercase leading-brand">Our Story</h1>
            <div className="w-20 h-[2px] bg-brandy mx-auto"></div>
@@ -15,7 +15,7 @@ export default function About() {
 
       {/* Heritage Content */}
       <section className="py-32">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-3 md:px-6">
           <div className="max-w-5xl mx-auto space-y-24">
             
             {/* Overview Section */}

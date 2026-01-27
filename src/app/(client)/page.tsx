@@ -12,7 +12,7 @@ export default function Home() {
 
       {/* Intro Section - Purity & Clarity */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-4 md:px-6">
           <div className="flex flex-col lg:flex-row items-center gap-24">
             <div className="lg:w-1/2 space-y-10">
               <div className="inline-flex items-center space-x-4">
@@ -56,7 +56,7 @@ export default function Home() {
 
       {/* Services Portfolio - Unified Visual Grid */}
       <section className="py-32 bg-slate-50 border-y border-slate-100">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-3 md:px-6">
           <div className="text-center max-w-4xl mx-auto mb-20 space-y-6">
             <span className="text-uocGold font-medium text-xs uppercase tracking-[0.3em] block">Our Signature Services</span>
             <h2 className="text-4xl md:text-5xl font-medium tracking-headline text-brownCoffee uppercase leading-brand">Bespoke Travel Management</h2>
@@ -96,7 +96,7 @@ export default function Home() {
 
       {/* Why Choose Us - Now a Balanced 2x3 Grid */}
       <section className="py-32 bg-white">
-        <div className="container mx-auto px-6">
+        <div className="container mx-auto px-3 md:px-6">
            <div className="flex flex-col lg:flex-row items-stretch gap-20">
               <div className="lg:w-1/2">
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-slate-100 border border-slate-100 shadow-xl overflow-hidden">
@@ -144,7 +144,7 @@ export default function Home() {
       </section>
 
       {/* Redesigned Signature CTA - LIGHT Contrast to break away from Footer */}
-      <section className="relative py-48 overflow-hidden bg-white border-t border-slate-100">
+      <section className="relative py-20 md:py-48 overflow-hidden bg-white border-t border-slate-100">
         {/* LIGHT Background Image for visual break */}
         <div 
           className="absolute inset-0 bg-cover bg-center bg-fixed opacity-10 grayscale-0 transition-all duration-1000" 
@@ -153,7 +153,7 @@ export default function Home() {
         {/* WHITE Backdrop for massive contrast against the dark footer */}
         <div className="absolute inset-0 bg-white/90" />
         
-        <div className="container mx-auto px-6 relative z-10 text-center">
+        <div className="container mx-auto px-3 md:px-6 relative z-10 text-center">
           <div className="max-w-5xl mx-auto py-24 space-y-12 bg-white/40 shadow-[0_0_80px_rgba(73,34,38,0.05)] border-y border-brandy/5">
              <div className="flex justify-center items-center space-x-4">
                 <div className="h-[1px] w-12 bg-brandy"></div>
