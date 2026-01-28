@@ -98,11 +98,11 @@ const Navbar: React.FC = () => {
         {/* Header with Close Button */}
         <div className="flex justify-between items-center p-6">
           <Image 
-            src={COMPANY_LOGO_ICON} 
+            src={COMPANY_LOGO_WIDE} 
             alt="Travkings" 
-            width={48}
-            height={48}
-            className="w-auto h-12"
+            width={200}
+            height={64}
+            className="w-32 md:w-auto object-contain h-12"
           />
           <button 
             className="text-3xl text-white hover:text-uocGold transition-colors"
