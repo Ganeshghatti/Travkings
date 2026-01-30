@@ -40,9 +40,20 @@ export default function Services() {
                         </div>
                       ))}
                    </div>
-                   <button className="bg-brownCoffee text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest hover:bg-brandy transition-all duration-500 shadow-xl">
-                      Inquire About {service.title}
-                   </button>
+                   {(service.id === "tour-packages" || service.id === "holiday-bookings") ? (
+                     <a
+                       href="https://holidays.travkings.com"
+                       target="_blank"
+                       rel="noopener noreferrer"
+                       className="inline-block bg-brownCoffee text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest hover:bg-brandy transition-all duration-500 shadow-xl"
+                     >
+                       Inquire About {service.title}
+                     </a>
+                   ) : (
+                     <button className="bg-brownCoffee text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest hover:bg-brandy transition-all duration-500 shadow-xl">
+                       Inquire About {service.title}
+                     </button>
+                   )}
                 </div>
               </div>
             ))}

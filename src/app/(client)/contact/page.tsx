@@ -64,9 +64,8 @@ export default function Contact() {
                      <h4 className="text-xl font-medium tracking-headline uppercase">Opening Hours</h4>
                      <div className="w-10 h-[1px] bg-uocGold"></div>
                      <ul className="space-y-4 text-xs font-normal uppercase tracking-widest text-white/60">
-                        <li className="flex justify-between"><span>Mon - Fri</span> <span className="text-white">09:00 - 18:00</span></li>
-                        <li className="flex justify-between"><span>Saturday</span> <span className="text-white">10:00 - 16:00</span></li>
-                        <li className="flex justify-between"><span>Sunday</span> <span className="text-white">Closed</span></li>
+                        <li className="flex justify-between"><span>Mon - Sat</span> <span className="text-white">10am - 7pm</span></li>
+                        <li className="flex justify-between"><span>Emergency</span> <span className="text-white">24x7 dedicated team</span></li>
                      </ul>
                   </div>
                </div>
@@ -80,8 +79,8 @@ export default function Contact() {
       </section>
 
       {/* Map Placeholder */}
-      <section className="h-[500px] w-full bg-slate-200 grayscale contrast-125 overflow-hidden border-t border-slate-100">
-         <Image src={CONTACT2} alt="Map Location" className="w-full h-full object-cover" fill />
+      <section className="h-[500px] w-full bg-slate-200 contrast-125 overflow-hidden border-t border-slate-100 group">
+         <Image src={CONTACT2} alt="Map Location" className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-1000" fill />
       </section>
     </div>
   );

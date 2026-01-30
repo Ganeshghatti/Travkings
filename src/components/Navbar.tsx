@@ -70,14 +70,26 @@ const Navbar: React.FC = () => {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-10">
-          {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
-            <Link 
-              key={item} 
-              href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              className="text-xs font-medium tracking-headline uppercase text-white hover:text-uocGold transition-colors"
-            >
-              {item}
-            </Link>
+          {['Home', 'About', 'Services', 'Holidays', 'Contact'].map((item) => (
+            item === 'Holidays' ? (
+              <a 
+                key={item} 
+                href="https://holidays.travkings.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-medium tracking-headline uppercase text-white hover:text-uocGold transition-colors"
+              >
+                {item}
+              </a>
+            ) : (
+              <Link 
+                key={item} 
+                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                className="text-xs font-medium tracking-headline uppercase text-white hover:text-uocGold transition-colors"
+              >
+                {item}
+              </Link>
+            )
           ))}
           <Link href="/contact" className="bg-brandy hover:bg-brownCoffee border border-brandy hover:border-uocGold text-white px-8 py-3 rounded-none text-xs font-medium uppercase tracking-widest transition-all duration-300 shadow-lg">
             Book Now
@@ -114,15 +126,28 @@ const Navbar: React.FC = () => {
         
         {/* Menu Content */}
         <div className="flex flex-col h-full items-center justify-center space-y-10 text-white -mt-10">
-          {['Home', 'About', 'Services', 'Packages', 'Contact'].map((item) => (
-            <Link 
-              key={item} 
-              href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
-              className="text-3xl font-medium tracking-headline uppercase hover:text-uocGold transition-colors"
-              onClick={() => setIsOpen(false)}
-            >
-              {item}
-            </Link>
+          {['Home', 'About', 'Services', 'Holidays', 'Contact'].map((item) => (
+            item === 'Holidays' ? (
+              <a 
+                key={item} 
+                href="https://holidays.travkings.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-3xl font-medium tracking-headline uppercase hover:text-uocGold transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item}
+              </a>
+            ) : (
+              <Link 
+                key={item} 
+                href={item === 'Home' ? '/' : `/${item.toLowerCase()}`}
+                className="text-3xl font-medium tracking-headline uppercase hover:text-uocGold transition-colors"
+                onClick={() => setIsOpen(false)}
+              >
+                {item}
+              </Link>
+            )
           ))}
           <div className="flex space-x-8 text-2xl pt-6">
              {SOCIAL_LINKS.map(social => (
