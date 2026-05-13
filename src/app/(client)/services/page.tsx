@@ -1,4 +1,5 @@
 import { SERVICES } from '@/lib/constants';
+import Link from "next/link"; 
 
 export default function Services() {
   return (
@@ -50,9 +51,9 @@ export default function Services() {
                        Inquire About {service.title}
                      </a>
                    ) : (
-                     <button className="bg-brownCoffee text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest hover:bg-brandy transition-all duration-500 shadow-xl">
+                     <Link href={"/contact#contact-section"} className="bg-brownCoffee text-white px-10 py-5 rounded-none font-medium text-xs uppercase tracking-widest hover:bg-brandy transition-all duration-500 shadow-xl inline-block">
                        Inquire About {service.title}
-                     </button>
+                     </Link>
                    )}
                 </div>
               </div>

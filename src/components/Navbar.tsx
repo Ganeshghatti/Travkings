@@ -91,9 +91,9 @@ const Navbar: React.FC = () => {
               </Link>
             )
           ))}
-          <Link href="/contact" className="bg-brandy hover:bg-brownCoffee border border-brandy hover:border-uocGold text-white px-8 py-3 rounded-none text-xs font-medium uppercase tracking-widest transition-all duration-300 shadow-lg">
+          {/* <Link href="/contact" className="bg-brandy hover:bg-brownCoffee border border-brandy hover:border-uocGold text-white px-8 py-3 rounded-none text-xs font-medium uppercase tracking-widest transition-all duration-300 shadow-lg">
             Book Now
-          </Link>
+          </Link> */}
         </div>
 
         {/* Mobile Toggle - Only show hamburger when closed */}

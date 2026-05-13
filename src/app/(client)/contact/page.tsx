@@ -16,7 +16,7 @@ export default function Contact() {
         </div>
       </div>
 
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white" id="contact-section">
          <div className="container mx-auto px-6">
             <div className="flex flex-col lg:flex-row gap-24">
                {/* Contact Info */}
