@@ -80,6 +80,7 @@ export default function PackageForm({ initialData, onSubmit, isSubmitting = fals
         .toLowerCase()
         .replace(/[^a-z0-9]+/g, '-')
         .replace(/(^-|-$)/g, '')
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setFormData(prev => ({ ...prev, slug }))
     }
   }, [formData.title, initialData?.slug])
@@ -87,6 +88,7 @@ export default function PackageForm({ initialData, onSubmit, isSubmitting = fals
   // Handle thumbnail preview
   useEffect(() => {
     if (typeof formData.thumbnail === 'string' && formData.thumbnail) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect
       setThumbnailPreview(`/packages/${formData.thumbnail}`)
     } else if (formData.thumbnail instanceof File) {
       const reader = new FileReader()

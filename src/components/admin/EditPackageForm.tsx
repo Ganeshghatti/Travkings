@@ -6,6 +6,7 @@ import PackageForm from './PackageForm'
 
 interface EditPackageFormProps {
   packageId: string
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   initialData: any
 }
 

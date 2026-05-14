@@ -23,6 +23,7 @@ export default async function PackagesPage({
   // Await searchParams (Next.js 15+ requirement)
   const params = await searchParams
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const query: any = {}
   if (params.isActive !== undefined) {
     query.isActive = params.isActive === 'true'
@@ -34,6 +35,7 @@ export default async function PackagesPage({
   const packages = await TravelPackage.find(query).sort({ createdAt: -1 }).lean()
 
   // Serialize MongoDB documents to plain objects
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const serializedPackages = packages.map((pkg: any) => ({
     _id: pkg._id.toString(),
     title: pkg.title,

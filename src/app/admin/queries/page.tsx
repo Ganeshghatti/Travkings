@@ -53,7 +53,8 @@ export default async function QueriesPage({
     query.service = { $regex: params.service, $options: 'i' }
   }
 
-  const queries = await Query.find(query).sort({ createdAt: -1 }).lean() as QueryLean[]
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const queries = await Query.find(query as any).sort({ createdAt: -1 }).lean() as QueryLean[]
 
   // Serialize MongoDB documents to plain objects
   const serializedQueries = queries.map((query: QueryLean) => ({
